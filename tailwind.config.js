@@ -14,7 +14,7 @@ module.exports = {
         ] /* 'yourfont' can be any name you want to use to reference this font in your tailwind classes */,
       },
       colors: {
-        primary: "#cab3aa",
+        primary: "#a0a4b8",
         faint: "rgba(0 0 0 0.5)",
       },
     },

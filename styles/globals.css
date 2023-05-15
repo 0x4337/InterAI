@@ -19,6 +19,12 @@
   @apply bg-faint backdrop-blur;
 }
 
+.btn_neutral {
+  font-family: lalo;
+
+  @apply border border-black p-2 hover:bg-black hover:text-primary hover:bg-black hover:border-transparent hover:scale-105 ease-out duration-300;
+}
+
 /* .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
