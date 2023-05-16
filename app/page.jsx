@@ -1,17 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
+
+import blob from "../public/assets/blobs/Object_4_(holo).png";
+import blob2 from "../public/assets/blobs/Object_11_(glassy).png";
 
 const Home = () => {
   return (
     <section className="w-full h-screen flex justify-center ">
-      <div className="flex flex-col justify-center items-center gap-5">
-        <h1 className="text-3xl glass px-2 py-1 border-black ">InterAI</h1>
+      <video className="fixed -z-10 top-40 md:top-0" autoPlay loop muted>
+        <source src="/assets/video/glassPanels.mp4" type="video/mp4" />
+      </video>
 
-        <p className="text-center glass border border-black p-2">
+      <div className="flex flex-col justify-center items-center gap-5">
+        <h1 className="text-3xl glass px-2 py-1">InterAI</h1>
+
+        <p className="text-center glass p-2 text-sm">
           InterAI is a platform that llows you to practice your interview skills
           with dynamic, AI powered questions and responses
         </p>
 
-        <Link href="/profile">Start Interview</Link>
+        <Link className="glass p-1" href="/interview">
+          Start Interview
+        </Link>
       </div>
     </section>
   );

@@ -8,21 +8,31 @@
 }
 
 .body {
-  @apply bg-primary text-black font-lalo;
+  @apply bg-primary text-white font-lalo;
 }
 
 .app {
-  @apply mx-5 md:px-7;
+  @apply mx-5 md:mx-7;
 }
 
 .glass {
   @apply bg-faint backdrop-blur;
 }
 
+.glass_btn {
+  font-family: lalo;
+
+  @apply glass px-2 py-0.5 hover:border-transparent hover:bg-white hover:text-primary hover:border-primary ease-out duration-300;
+}
+
 .btn_neutral {
   font-family: lalo;
 
-  @apply border border-black p-2 hover:bg-black hover:text-primary hover:bg-black hover:border-transparent hover:scale-105 ease-out duration-300;
+  @apply border border-white p-2 hover:bg-white hover:text-primary hover:bg-white hover:border-transparent ease-out duration-300;
+}
+
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-full p-5 glass border min-w-[210px] flex flex-col gap-2 justify-end items-end z-50;
 }
 
 /* .black_btn {
