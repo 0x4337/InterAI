@@ -2,6 +2,7 @@ import "@styles/globals.css";
 
 // COMPONENTS
 import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "InterAI",
@@ -12,8 +13,10 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className="body">
-        <Nav />
-        <main className="app">{children}</main>
+        <Provider>
+          <Nav />
+          <main className="app">{children}</main>
+        </Provider>
       </body>
     </html>
   );

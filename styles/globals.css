@@ -12,7 +12,7 @@
 }
 
 .app {
-  @apply mx-5 md:mx-7;
+  @apply mx-5 md:mx-10;
 }
 
 .glass {
@@ -22,7 +22,19 @@
 .glass_btn {
   font-family: lalo;
 
-  @apply glass px-2 py-0.5 hover:border-transparent hover:bg-white hover:text-primary hover:border-primary ease-out duration-300;
+  @apply glass px-2 py-0.5 justify-center hover:border-transparent hover:bg-white hover:text-primary hover:border-primary ease-out duration-300;
+}
+
+.start_btn {
+  font-family: lalo;
+
+  @apply bg-goGreen/80 text-primary hover:bg-goGreen py-2;
+}
+
+.stop_btn {
+  font-family: lalo;
+
+  @apply bg-stopRed/80 text-primary hover:bg-stopRed py-2;
 }
 
 .btn_neutral {

@@ -1,9 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import blob from "../public/assets/blobs/Object_4_(holo).png";
-import blob2 from "../public/assets/blobs/Object_11_(glassy).png";
-
 const Home = () => {
   return (
     <section className="w-full h-screen flex justify-center ">

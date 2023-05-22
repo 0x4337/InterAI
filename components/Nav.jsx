@@ -6,27 +6,27 @@ import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Nav = () => {
-  const isLoggedIn = true;
+  const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
 
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
-    const setProvidersFunc = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
 
-      setProvidersFunc(response);
+      setProviders(response);
     };
 
-    setProviders();
+    setUpProviders();
   }, []);
 
   return (
     <nav className="flex fixed top-0 glass justify-between items-center w-full p-2 sm:p-3 mb-5">
       <Link href="/" className="flex gap-2 items-center">
         <Image
-          src="/assets/objects/abstract-shape-81.png"
+          src="/assets/objects/abstract-shape-70.png"
           width={60}
           height={60}
           alt="InterAI Logo"
@@ -39,7 +39,7 @@ const Nav = () => {
 
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className="flex gap-3 items-center">
             <Link href="/interview" className="glass_btn border">
               New Interview
@@ -50,7 +50,8 @@ const Nav = () => {
 
             <Link href="/profile">
               <Image
-                src="/assets/objects/abstract-shape-77.png"
+                // src="/assets/objects/abstract-shape-77.png"
+                src={session?.user.image}
                 width={37}
                 height={37}
                 alt="profile"
@@ -77,10 +78,11 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
-        {isLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/objects/abstract-shape-77.png"
+              // src="/assets/objects/abstract-shape-77.png"
+              src={session?.user.image}
               width={37}
               height={37}
               alt="profile"
@@ -124,14 +126,16 @@ const Nav = () => {
           <>
             {providers &&
               Object.values(providers).map((provider) => {
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)}
-                  className="glass_btn"
-                >
-                  Sign In
-                </button>;
+                return (
+                  <button
+                    type="button"
+                    key={provider.name}
+                    onClick={() => signIn(provider.id)}
+                    className="glass_btn"
+                  >
+                    Sign In
+                  </button>
+                );
               })}
           </>
         )}

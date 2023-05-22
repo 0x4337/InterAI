@@ -16,6 +16,9 @@ module.exports = {
       colors: {
         primary: "black",
         faint: "rgba(0 0 0 0.5)",
+        "faint-2": "#3A3A3A",
+        goGreen: "#adfc05",
+        stopRed: "#fe4648",
       },
     },
   },
